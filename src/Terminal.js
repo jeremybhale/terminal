@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 import io from 'socket.io-client'
-const socket = io.connect()
+const port = process.env.PORT || 8000
+const socket = io.connect('https://chatwithleaonard-client.herokuapp.com:' + port)
 
 class Terminal extends Component {
 	constructor(props) {
