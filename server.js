@@ -1,3 +1,7 @@
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/'));
+
 const io = require('socket.io')()
 
 const port = process.env.PORT || 3000
