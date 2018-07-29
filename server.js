@@ -1,3 +1,5 @@
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 const io = require('socket.io')()
 
 const port = process.env.PORT || 3000
