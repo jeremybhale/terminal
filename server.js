@@ -1,6 +1,6 @@
 const io = require('socket.io')()
 
-const port = 8000
+const port = process.env.PORT || 3000
 io.listen(port)
 
 function resetNotes() {
@@ -15,6 +15,7 @@ var notes = []
 resetNotes()
 
 io.on('connection', (client) => {
+	console.log("Connected")
 	io.to(client.id).emit('join', {
 		notes: notes
 	})
